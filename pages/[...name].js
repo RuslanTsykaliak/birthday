@@ -17,6 +17,13 @@ const Wish = ({ history }) => {
 	const [downloadedOnce, setDownloadedOnce] = useState(false);
 	const audioRef = useRef();
 
+	const handlePlayAudio = () => {
+		audioRef.current.play();
+	};
+
+
+
+
 	const { setTheme } = useTheme();
 
 	useEffect(() => {
@@ -168,6 +175,10 @@ const Wish = ({ history }) => {
 			<audio ref={audioRef} id="player" autoPlay>
 				<source src="media/hbd.mp3" />
 			</audio>
+			<Button
+				onClick={handlePlayAudio}
+				text="Play Audio"
+			/>
 		</div>
 	);
 };
